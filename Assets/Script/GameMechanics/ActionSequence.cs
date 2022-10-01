@@ -4,33 +4,29 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class LevelSequence : IList<LevelAction>
+public class ActionSequence : IList<LevelAction>
 {
 	public Action OnActionFinished;
 
 	public int CurrentAction;
 
-	public int NumberOfHoursDone = 0;
-	public int NumberOfHoursToDo = 5;
-
 	public bool Validated => CurrentAction == Count;
 
-
-	public void Initialize(Action aOnActionFinished)
+	public void Initialize()
 	{
-		OnActionFinished = aOnActionFinished;
 		foreach (LevelAction action in this)
 		{
-			action.OnActionFinished = OnActionFinished;
+			action.OnActionFinished += GoToNextAction;
+			action.ResetAction();
 		}
+		CurrentAction = -1;
+		GoToNextAction();
 	}
-	public void Reset()
+	public void GoToNextAction()
 	{
-		foreach (LevelAction action in this)
-		{
-			action.Reset();
-		}
-		CurrentAction = 0;
+		CurrentAction++;
+		if (CurrentAction < Count)
+			this[CurrentAction].StartAction();
 	}
 
 	#region IList Implementation
