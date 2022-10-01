@@ -18,20 +18,19 @@ public class Clock : MonoBehaviour
 		Animator = GetComponent<Animator>();
 	}
 
-	public void Update()
+	public void FixedUpdate()
 	{
 		CurrentTime += Time.fixedDeltaTime;
 		if (CurrentTime > 10)
 		{
 			if (IsOK)
 			{
-				CurrentTime = 0;
 				IsOK = false;
+				CurrentTime = 0;
 			}
 			else
 			{
-				Debug.Log("Lose");
-				//GameManager.Instance.Lose();
+				GameManager.Instance.Lose();
 			}
 		}
 		Animator.SetBool("IsOk", IsOK);

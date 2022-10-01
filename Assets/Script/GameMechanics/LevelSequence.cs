@@ -25,6 +25,7 @@ public class LevelSequence : IList<LevelAction>
 		{
 			action.Reset();
 		}
+		CurrentAction = 0;
 	}
 
 	#region IList Implementation

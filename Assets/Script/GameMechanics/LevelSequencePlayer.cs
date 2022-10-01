@@ -24,6 +24,11 @@ public class LevelSequencePlayer : MonoBehaviour
 	public float lastTimeValidated = -1;
 	public void Update()
 	{
+		if (lastTimeValidated > clock.CurrentTime)
+		{
+			lastTimeValidated = -1;
+			LevelSequence.Reset();
+		}
 		if (!clock.IsOK)
 		{
 			if (LevelSequence.Validated)
@@ -31,14 +36,6 @@ public class LevelSequencePlayer : MonoBehaviour
 				clock.IsOK = true;
 				amountOfValidation++;
 				lastTimeValidated = clock.CurrentTime;
-			}
-		}
-		else
-		{
-			if (lastTimeValidated > clock.CurrentTime)
-			{
-				lastTimeValidated = -1;
-				LevelSequence.Reset();
 			}
 		}
 	}

@@ -34,5 +34,6 @@ public class LevelAction : MonoBehaviour
 	public void Reset()
 	{
 		gameObject.SetActive(!HiddenByDefault);
+		IsFinished = false;
 	}
 }
