@@ -2,9 +2,9 @@
 using System.Collections;
 using UnityEngine;
 
+[Serializable]
 public class LevelAction : MonoBehaviour
 {
-	public GameObject objectToDisplay;
 	public bool HideOnCompletion;
 
 	public Action OnActionFinished;
@@ -13,13 +13,13 @@ public class LevelAction : MonoBehaviour
 	public void FinishAction()
 	{
 		if (HideOnCompletion)
-			objectToDisplay.SetActive(false);
+			gameObject.SetActive(false);
 
 		OnActionFinished();
 	}
 
 	public void StartAction()
 	{
-		objectToDisplay.SetActive(true);
+		gameObject.SetActive(true);
 	}
 }

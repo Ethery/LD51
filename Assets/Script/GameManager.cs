@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
 using UnityEditor;
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
 	[ReadOnly]
 	public int currentLevel = 1;
 	public int lastLevel = 3;
+	public List<LevelSequence> Sequences;
 
 	public GameObject WinScreen;
 

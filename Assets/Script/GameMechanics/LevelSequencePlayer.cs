@@ -14,8 +14,9 @@ public class LevelSequencePlayer : MonoBehaviour
 		LevelSequence[CurrentAction].StartAction();
 	}
 
-	private void Start()
+	private void Initialize(LevelSequence sequence)
 	{
+		LevelSequence = sequence;
 		LevelSequence.Initialize(GoToNextAction);
 	}
 

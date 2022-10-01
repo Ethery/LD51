@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "LevelSequence")]
-public class LevelSequence : ScriptableObject, IList<LevelAction>
+[Serializable]
+public class LevelSequence : IList<LevelAction>
 {
 	public Action OnActionFinished;
 
@@ -18,62 +18,65 @@ public class LevelSequence : ScriptableObject, IList<LevelAction>
 	}
 
 	#region IList Implementation
-	public LevelAction this[int index] { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-	public int Count => throw new NotImplementedException();
-
-	public bool IsReadOnly => throw new NotImplementedException();
-
-	public void Add(LevelAction item)
-	{
-		throw new NotImplementedException();
-	}
-
-	public void Clear()
-	{
-		throw new NotImplementedException();
-	}
-
-	public bool Contains(LevelAction item)
-	{
-		throw new NotImplementedException();
-	}
-
-	public void CopyTo(LevelAction[] array, int arrayIndex)
-	{
-		throw new NotImplementedException();
-	}
-
-	public IEnumerator<LevelAction> GetEnumerator()
-	{
-		throw new NotImplementedException();
-	}
+	[SerializeField]
+	private List<LevelAction> Actions;
 
 	public int IndexOf(LevelAction item)
 	{
-		throw new NotImplementedException();
+		return ((IList<LevelAction>)Actions).IndexOf(item);
 	}
-
 
 	public void Insert(int index, LevelAction item)
 	{
-		throw new NotImplementedException();
-	}
-
-	public bool Remove(LevelAction item)
-	{
-		throw new NotImplementedException();
+		((IList<LevelAction>)Actions).Insert(index, item);
 	}
 
 	public void RemoveAt(int index)
 	{
-		throw new NotImplementedException();
+		((IList<LevelAction>)Actions).RemoveAt(index);
+	}
+
+	public void Add(LevelAction item)
+	{
+		((ICollection<LevelAction>)Actions).Add(item);
+	}
+
+	public void Clear()
+	{
+		((ICollection<LevelAction>)Actions).Clear();
+	}
+
+	public bool Contains(LevelAction item)
+	{
+		return ((ICollection<LevelAction>)Actions).Contains(item);
+	}
+
+	public void CopyTo(LevelAction[] array, int arrayIndex)
+	{
+		((ICollection<LevelAction>)Actions).CopyTo(array, arrayIndex);
+	}
+
+	public bool Remove(LevelAction item)
+	{
+		return ((ICollection<LevelAction>)Actions).Remove(item);
+	}
+
+	public IEnumerator<LevelAction> GetEnumerator()
+	{
+		return ((IEnumerable<LevelAction>)Actions).GetEnumerator();
 	}
 
 	IEnumerator IEnumerable.GetEnumerator()
 	{
-		throw new NotImplementedException();
+		return ((IEnumerable)Actions).GetEnumerator();
 	}
+
+	public int Count => ((ICollection<LevelAction>)Actions).Count;
+
+	public bool IsReadOnly => ((ICollection<LevelAction>)Actions).IsReadOnly;
+
+	public LevelAction this[int index] { get => ((IList<LevelAction>)Actions)[index]; set => ((IList<LevelAction>)Actions)[index] = value; }
 	#endregion
 
 }
