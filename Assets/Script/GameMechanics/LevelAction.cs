@@ -10,7 +10,6 @@ public abstract class LevelAction : MonoBehaviour
 
 	public Action OnActionFinished;
 
-	[HideInInspector]
 	public EActionStatus Status;
 
 	public enum EActionStatus
@@ -22,8 +21,12 @@ public abstract class LevelAction : MonoBehaviour
 
 	public void StartAction()
 	{
-		StartActionSpecific();
-		Status = EActionStatus.Started;
+		if (Status == EActionStatus.Disabled)
+		{
+			Status = EActionStatus.Started;
+			gameObject.SetActive(true);
+			StartActionSpecific();
+		}
 	}
 	protected abstract void StartActionSpecific();
 
@@ -31,13 +34,13 @@ public abstract class LevelAction : MonoBehaviour
 	{
 		if (Status == EActionStatus.Started)
 		{
+			Status = EActionStatus.Finished;
 			if (HideOnCompletion)
 				gameObject.SetActive(false);
 
 			FinishActionSpecific();
 
 			OnActionFinished();
-			Status = EActionStatus.Finished;
 		}
 	}
 
@@ -45,9 +48,12 @@ public abstract class LevelAction : MonoBehaviour
 
 	public void ResetAction()
 	{
-		gameObject.SetActive(!HiddenByDefault);
-		ResetActionSpecific();
-		Status = EActionStatus.Disabled;
+		if (Status == EActionStatus.Finished)
+		{
+			Status = EActionStatus.Disabled;
+			gameObject.SetActive(!HiddenByDefault && !HideOnCompletion);
+			ResetActionSpecific();
+		}
 	}
 	protected abstract void ResetActionSpecific();
 
