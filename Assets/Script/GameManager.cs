@@ -6,29 +6,31 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [ReadOnly]
-    public int currentLevel = 1;
-    public int lastLevel = 3;
+	[ReadOnly]
+	public int currentLevel = 1;
+	public int lastLevel = 3;
 
-    public GameObject WinScreen;
+	public GameObject WinScreen;
 
-    public static GameManager instance;
+	public static GameManager Instance;
 
-    private void Awake()
-    {
-        if (instance == null)
-            instance = this;
-        else
-            Destroy(this);
+	public Clock clock;
 
-        WinScreen.SetActive(false);
+	private void Awake()
+	{
+		if (Instance == null)
+			Instance = this;
+		else
+			Destroy(this);
+
+		WinScreen.SetActive(false);
 
 	}
 
-    private void Start()
-    {
-        SceneManager.LoadScene("Level_"+currentLevel,LoadSceneMode.Additive);
-    }
+	private void Start()
+	{
+		SceneManager.LoadScene("Level_" + currentLevel, LoadSceneMode.Additive);
+	}
 
 	public void GoToNextLevel()
 	{
@@ -49,7 +51,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	public void BackToMainMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
+	{
+		SceneManager.LoadScene("MainMenu");
+	}
 }

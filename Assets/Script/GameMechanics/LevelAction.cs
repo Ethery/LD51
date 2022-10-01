@@ -9,16 +9,17 @@ public class LevelAction : MonoBehaviour
 
 	public Action OnActionFinished;
 
-	public void ToggleObject()
-	{
-		objectToDisplay.SetActive(!objectToDisplay.activeSelf);
-	}
 
 	public void FinishAction()
 	{
 		if (HideOnCompletion)
-			ToggleObject();
+			objectToDisplay.SetActive(false);
 
 		OnActionFinished();
+	}
+
+	public void StartAction()
+	{
+		objectToDisplay.SetActive(true);
 	}
 }

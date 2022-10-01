@@ -9,12 +9,12 @@ public class InGamePauseScreen : MonoBehaviour
 
 	public void Start()
 	{
-		HideScreen(); 
+		HideScreen();
 	}
 
 	public void ToggleScreen()
 	{
-		if(PauseScreen.activeSelf)
+		if (PauseScreen.activeSelf)
 			HideScreen();
 		else
 			ShowScreen();
@@ -34,11 +34,11 @@ public class InGamePauseScreen : MonoBehaviour
 
 	public void ExitToMainMenu()
 	{
-		GameManager.instance.BackToMainMenu();
+		GameManager.Instance.BackToMainMenu();
 	}
 
 	public void ReloadScene()
 	{
-		GameManager.instance.Reload();
+		GameManager.Instance.Reload();
 	}
 }

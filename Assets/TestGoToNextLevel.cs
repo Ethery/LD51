@@ -8,7 +8,7 @@ public class TestGoToNextLevel : MonoBehaviour
     // Start is called before the first frame update
     public void gotonext()
     {
-        GameManager.instance.GoToNextLevel();
+        GameManager.Instance.GoToNextLevel();
     }
 
 }
