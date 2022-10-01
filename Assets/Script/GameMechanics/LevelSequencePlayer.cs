@@ -4,27 +4,42 @@ using UnityEngine;
 public class LevelSequencePlayer : MonoBehaviour
 {
 	public LevelSequence LevelSequence;
-	public int CurrentAction;
-
 	public Clock clock => GameManager.Instance.clock;
 
 	public void GoToNextAction()
 	{
-		CurrentAction++;
-		LevelSequence[CurrentAction].StartAction();
+		LevelSequence.CurrentAction++;
+		if (LevelSequence.CurrentAction < LevelSequence.Count)
+		{
+			LevelSequence[LevelSequence.CurrentAction].StartAction();
+		}
 	}
 
-	private void Initialize(LevelSequence sequence)
+	private void Start()
 	{
-		LevelSequence = sequence;
 		LevelSequence.Initialize(GoToNextAction);
 	}
 
+	public int amountOfValidation = 0;
+	public float lastTimeValidated = -1;
 	public void Update()
 	{
-		if (clock.CurrentTime / 10 == CurrentAction)
+		if (!clock.IsOK)
 		{
-			clock.IsOK = true;
+			if (LevelSequence.Validated)
+			{
+				clock.IsOK = true;
+				amountOfValidation++;
+				lastTimeValidated = clock.CurrentTime;
+			}
+		}
+		else
+		{
+			if (lastTimeValidated > clock.CurrentTime)
+			{
+				lastTimeValidated = -1;
+				LevelSequence.Reset();
+			}
 		}
 	}
 }

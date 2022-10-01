@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Clock : MonoBehaviour
 {
-	[HideInInspector]
+	[ReadOnly(true)]
 	public float CurrentTime;
 
 	private Animator Animator;
@@ -21,7 +21,25 @@ public class Clock : MonoBehaviour
 	public void Update()
 	{
 		CurrentTime += Time.fixedDeltaTime;
-
+		if (CurrentTime > 10)
+		{
+			if (IsOK)
+			{
+				CurrentTime = 0;
+				IsOK = false;
+			}
+			else
+			{
+				Debug.Log("Lose");
+				//GameManager.Instance.Lose();
+			}
+		}
 		Animator.SetBool("IsOk", IsOK);
+	}
+
+	[ContextMenu("Reset Clock")]
+	public void Reset()
+	{
+		CurrentTime = 0;
 	}
 }

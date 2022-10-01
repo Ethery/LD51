@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
@@ -10,9 +11,9 @@ public class GameManager : MonoBehaviour
 	[ReadOnly]
 	public int currentLevel = 1;
 	public int lastLevel = 3;
-	public List<LevelSequence> Sequences;
 
 	public GameObject WinScreen;
+	public GameObject LoseScreen;
 
 	public static GameManager Instance;
 
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
 			Destroy(this);
 
 		WinScreen.SetActive(false);
+		LoseScreen.SetActive(false);
 
 	}
 
@@ -55,5 +57,10 @@ public class GameManager : MonoBehaviour
 	public void BackToMainMenu()
 	{
 		SceneManager.LoadScene("MainMenu");
+	}
+
+	internal void Lose()
+	{
+		LoseScreen.SetActive(true);
 	}
 }

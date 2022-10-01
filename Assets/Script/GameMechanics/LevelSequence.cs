@@ -8,12 +8,22 @@ public class LevelSequence : IList<LevelAction>
 {
 	public Action OnActionFinished;
 
+	public int CurrentAction;
+	public bool Validated => CurrentAction == Count;
+
 	public void Initialize(Action aOnActionFinished)
 	{
 		OnActionFinished = aOnActionFinished;
 		foreach (LevelAction action in this)
 		{
 			action.OnActionFinished = OnActionFinished;
+		}
+	}
+	public void Reset()
+	{
+		foreach (LevelAction action in this)
+		{
+			action.Reset();
 		}
 	}
 
