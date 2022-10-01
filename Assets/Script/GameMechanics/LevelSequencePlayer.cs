@@ -1,23 +1,19 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelSequencePlayer : MonoBehaviour
 {
-	public LevelSequence LevelSequence;
+	public List<ActionSequence> ActionSequences;
+	public int CurrentHour = 0;
+
+	public ActionSequence LevelSequence => ActionSequences[CurrentHour];
 	public Clock clock => GameManager.Instance.clock;
 
-	public void GoToNextAction()
-	{
-		LevelSequence.CurrentAction++;
-		if (LevelSequence.CurrentAction < LevelSequence.Count)
-		{
-			LevelSequence[LevelSequence.CurrentAction].StartAction();
-		}
-	}
 
 	private void Start()
 	{
-		LevelSequence.Initialize(GoToNextAction);
+		LevelSequence.Initialize();
 	}
 
 
@@ -28,19 +24,19 @@ public class LevelSequencePlayer : MonoBehaviour
 		if (lastTimeValidated > clock.CurrentTime)
 		{
 			lastTimeValidated = -1;
-			LevelSequence.Reset();
+			LevelSequence.Initialize();
 		}
 		if (!clock.IsOK)
 		{
 			if (LevelSequence.Validated)
 			{
 				clock.IsOK = true;
-				LevelSequence.NumberOfHoursDone++;
+				CurrentHour++;
 				lastTimeValidated = clock.CurrentTime;
 			}
 		}
 
-		if (LevelSequence.NumberOfHoursDone >= LevelSequence.NumberOfHoursToDo)
+		if (CurrentHour >= ActionSequences.Count)
 		{
 			GameManager.Instance.WinLevel();
 		}

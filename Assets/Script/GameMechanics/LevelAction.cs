@@ -3,37 +3,52 @@ using System.Collections;
 using UnityEngine;
 
 [Serializable]
-public class LevelAction : MonoBehaviour
+public abstract class LevelAction : MonoBehaviour
 {
-
 	public bool HiddenByDefault;
 	public bool HideOnCompletion;
 
 	public Action OnActionFinished;
 
-	public bool IsFinished;
+	[HideInInspector]
+	public EActionStatus Status;
 
-
-	public void FinishAction()
+	public enum EActionStatus
 	{
-		if (!IsFinished)
-		{
-			if (HideOnCompletion)
-				gameObject.SetActive(false);
-
-			OnActionFinished();
-			IsFinished = true;
-		}
+		Disabled,
+		Started,
+		Finished
 	}
 
 	public void StartAction()
 	{
-		gameObject.SetActive(true);
+		StartActionSpecific();
+		Status = EActionStatus.Started;
+	}
+	protected abstract void StartActionSpecific();
+
+	public void FinishAction()
+	{
+		if (Status == EActionStatus.Started)
+		{
+			if (HideOnCompletion)
+				gameObject.SetActive(false);
+
+			FinishActionSpecific();
+
+			OnActionFinished();
+			Status = EActionStatus.Finished;
+		}
 	}
 
-	public void Reset()
+	protected abstract void FinishActionSpecific();
+
+	public void ResetAction()
 	{
 		gameObject.SetActive(!HiddenByDefault);
-		IsFinished = false;
+		ResetActionSpecific();
+		Status = EActionStatus.Disabled;
 	}
+	protected abstract void ResetActionSpecific();
+
 }

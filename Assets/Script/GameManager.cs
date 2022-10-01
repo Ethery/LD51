@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	[ReadOnly]
 	public int currentLevel = 1;
 	public int lastLevel = 3;
 
@@ -42,6 +41,7 @@ public class GameManager : MonoBehaviour
 		{
 			SceneManager.UnloadSceneAsync("Level_" + (currentLevel++));
 			SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
+			clock.Reset();
 		}
 		else
 		{
@@ -53,8 +53,15 @@ public class GameManager : MonoBehaviour
 	{
 		SceneManager.UnloadSceneAsync("Level_" + (currentLevel));
 		SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
+		clock.Reset();
 	}
-
+	public void GoToLevel(int aLevelToGo)
+	{
+		SceneManager.UnloadSceneAsync("Level_" + (currentLevel));
+		currentLevel = aLevelToGo;
+		SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
+		clock.Reset();
+	}
 	public void BackToMainMenu()
 	{
 		SceneManager.LoadScene("MainMenu");
