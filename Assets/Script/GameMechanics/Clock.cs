@@ -26,7 +26,7 @@ public class Clock : MonoBehaviour
 			if (IsOK)
 			{
 				IsOK = false;
-				CurrentTime = 0;
+				Reset();
 			}
 			else
 			{
@@ -40,5 +40,6 @@ public class Clock : MonoBehaviour
 	public void Reset()
 	{
 		CurrentTime = 0;
+		Animator.SetTrigger("Reset");
 	}
 }

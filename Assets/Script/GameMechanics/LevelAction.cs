@@ -10,6 +10,7 @@ public abstract class LevelAction : MonoBehaviour
 
 	public Action OnActionFinished;
 
+	[HideInInspector]
 	public EActionStatus Status;
 
 	public enum EActionStatus
@@ -18,6 +19,13 @@ public abstract class LevelAction : MonoBehaviour
 		Started,
 		Finished
 	}
+
+	public void StartAction()
+	{
+		StartActionSpecific();
+		Status = EActionStatus.Started;
+	}
+	protected abstract void StartActionSpecific();
 
 	public void FinishAction()
 	{
@@ -43,10 +51,4 @@ public abstract class LevelAction : MonoBehaviour
 	}
 	protected abstract void ResetActionSpecific();
 
-	public void StartAction()
-	{
-		StartActionSpecific();
-		Status = EActionStatus.Started;
-	}
-	protected abstract void StartActionSpecific();
 }

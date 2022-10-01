@@ -9,7 +9,7 @@ public class EditorUtilities : ScriptableObject
 	static List<Scene> CurrentScenes = new List<Scene>();
 
 	[MenuItem("Tools/Launch game %g")]
-	static void Open()
+	public static void Open()
 	{
 		SceneAsset myWantedStartScene = AssetDatabase.LoadAssetAtPath<SceneAsset>("Assets/Scenes/MainMenu.unity");
 		if (myWantedStartScene != null)

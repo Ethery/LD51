@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 1
-  lastLevel: 3
+  lastLevel: 2
   WinScreen: {fileID: 890312760194579398}
   LoseScreen: {fileID: 3123045474646790687}
   clock: {fileID: 6176432070256959999}
@@ -537,10 +537,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7977968611308951905}
     m_Modifications:
-    - target: {fileID: 4251512470213990603, guid: 8b6d70b2a5e4792489653bc5c504fa2d, type: 3}
-      propertyPath: IsOK
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8579151988970822306, guid: 8b6d70b2a5e4792489653bc5c504fa2d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -627,7 +623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8579151988970822318, guid: 8b6d70b2a5e4792489653bc5c504fa2d, type: 3}
       propertyPath: m_Name
-      value: Desk (1)
+      value: Desk
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b6d70b2a5e4792489653bc5c504fa2d, type: 3}

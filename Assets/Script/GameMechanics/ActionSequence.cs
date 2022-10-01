@@ -16,7 +16,7 @@ public class ActionSequence : IList<LevelAction>
 	{
 		foreach (LevelAction action in this)
 		{
-			action.OnActionFinished += GoToNextAction;
+			action.OnActionFinished = GoToNextAction;
 			action.ResetAction();
 		}
 		CurrentAction = -1;
@@ -24,6 +24,8 @@ public class ActionSequence : IList<LevelAction>
 	}
 	public void GoToNextAction()
 	{
+		if (CurrentAction > 0)
+			this[CurrentAction].ResetAction();
 		CurrentAction++;
 		if (CurrentAction < Count)
 			this[CurrentAction].StartAction();
