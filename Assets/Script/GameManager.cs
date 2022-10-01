@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 		SceneManager.LoadScene("Level_" + currentLevel, LoadSceneMode.Additive);
 	}
 
-	public void GoToNextLevel()
+	public void WinLevel()
 	{
 		if (lastLevel != currentLevel)
 		{
@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
 			WinScreen.SetActive(true);
 		}
 	}
+
 	public void Reload()
 	{
 		SceneManager.UnloadSceneAsync("Level_" + (currentLevel));

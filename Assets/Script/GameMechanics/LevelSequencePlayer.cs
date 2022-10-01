@@ -20,8 +20,9 @@ public class LevelSequencePlayer : MonoBehaviour
 		LevelSequence.Initialize(GoToNextAction);
 	}
 
-	public int amountOfValidation = 0;
+
 	public float lastTimeValidated = -1;
+
 	public void Update()
 	{
 		if (lastTimeValidated > clock.CurrentTime)
@@ -34,9 +35,14 @@ public class LevelSequencePlayer : MonoBehaviour
 			if (LevelSequence.Validated)
 			{
 				clock.IsOK = true;
-				amountOfValidation++;
+				LevelSequence.NumberOfHoursDone++;
 				lastTimeValidated = clock.CurrentTime;
 			}
+		}
+
+		if (LevelSequence.NumberOfHoursDone >= LevelSequence.NumberOfHoursToDo)
+		{
+			GameManager.Instance.WinLevel();
 		}
 	}
 }

@@ -9,7 +9,12 @@ public class LevelSequence : IList<LevelAction>
 	public Action OnActionFinished;
 
 	public int CurrentAction;
+
+	public int NumberOfHoursDone = 0;
+	public int NumberOfHoursToDo = 5;
+
 	public bool Validated => CurrentAction == Count;
+
 
 	public void Initialize(Action aOnActionFinished)
 	{
