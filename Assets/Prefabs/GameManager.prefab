@@ -124,6 +124,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7977968611308951905}
     m_Modifications:
+    - target: {fileID: 1610872807, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0000071526
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610872807, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 147.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717571397783910572, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_Name
+      value: Buttons
+      objectReference: {fileID: 0}
     - target: {fileID: 4267008143730904128, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -211,6 +223,42 @@ PrefabInstance:
     - target: {fileID: 4267008143730904133, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
       propertyPath: m_Name
       value: InGamePauseScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267008144226923167, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_text
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267008144226923167, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_fontSize
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267008144226923167, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267008145194714272, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 80.1846
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267008145194714272, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 29.281
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267008145194714272, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -482.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267008145194714272, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -276.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685998993791778037, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 533.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6685998993791778037, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -347.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bebb6916ceed5046bc5ee6d3212a6c3, type: 3}
@@ -317,6 +365,10 @@ PrefabInstance:
     - target: {fileID: 7875334543066382479, guid: 0665463ad42d6f94a82aafac23aeb3f0, type: 3}
       propertyPath: m_Name
       value: WinScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7875334543066382479, guid: 0665463ad42d6f94a82aafac23aeb3f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0665463ad42d6f94a82aafac23aeb3f0, type: 3}
