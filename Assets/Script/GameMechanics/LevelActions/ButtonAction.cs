@@ -7,17 +7,20 @@ using UnityEngine.UI;
 public class ButtonAction : LevelAction
 {
 	public Button button;
-	public int PushCount = 0;
+	private int PushCount = 0;
 	public List<int> PushObjectives = new List<int>() { 1 };
 	public int PushObjective => PushObjectives[CurrentObjective];
-	public int CurrentObjective = -1;
+
+	private int CurrentObjective = 0;
 	public TextMeshProUGUI buttonName;
 
 	public void PushedButtonOnce()
 	{
 		PushCount++;
 		if (PushCount >= PushObjective)
+		{
 			FinishAction();
+		}
 	}
 
 	protected override void FinishActionSpecific()
@@ -27,6 +30,8 @@ public class ButtonAction : LevelAction
 	protected override void ResetActionSpecific()
 	{
 		button.interactable = false;
+		if (PushObjectives.Count > CurrentObjective + 1)
+			CurrentObjective++;
 	}
 	protected override void StartActionSpecific()
 	{
@@ -35,8 +40,6 @@ public class ButtonAction : LevelAction
 		button.onClick.RemoveAllListeners();
 		button.onClick.AddListener(PushedButtonOnce);
 		PushCount = 0;
-		if (PushObjectives.Count > CurrentObjective + 1)
-			CurrentObjective++;
 	}
 
 	private void Awake()

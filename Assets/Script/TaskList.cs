@@ -11,7 +11,7 @@ public class TaskList : MonoBehaviour
 	private void Update()
 	{
 		currentPlayer = FindObjectOfType<LevelSequencePlayer>();
-		if (currentPlayer != null && currentPlayer.CurrentSequence != null)
+		if (currentPlayer != null && currentPlayer.CurrentSequence != null && !currentPlayer.clock.IsOK)
 		{
 			int i = 0;
 			foreach (LevelAction action in currentPlayer.CurrentSequence)
@@ -30,6 +30,7 @@ public class TaskList : MonoBehaviour
 				}
 
 				gameObject.GetComponent<TextMeshProUGUI>().text = action.ToString();
+				gameObject.SetActive(true);
 
 				i++;
 			}

@@ -16,6 +16,7 @@ public class DialogueAction : LevelAction
         num++;
         if (num >= textToTalk.Count)
         {
+
             FinishAction();
             GameManager.Instance.clock.CurrentTime = 9.5f;
             return;

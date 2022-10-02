@@ -411,14 +411,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4536398784920409239, guid: ea4b810a1a569514f83e980a10989ed1, type: 3}
-      propertyPath: m_SpriteState.m_SelectedSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ca93b457a6736e64da36fc041e94a3a0, type: 3}
-    - target: {fileID: 4536398784920409239, guid: ea4b810a1a569514f83e980a10989ed1, type: 3}
-      propertyPath: m_SpriteState.m_HighlightedSprite
-      value: 
-      objectReference: {fileID: 21300000, guid: ca93b457a6736e64da36fc041e94a3a0, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea4b810a1a569514f83e980a10989ed1, type: 3}
 --- !u!224 &1341397065 stripped
@@ -545,6 +537,11 @@ PrefabInstance:
       propertyPath: textToTalk.Array.data[4]
       value: Be aware that if you don't, for any reasons, you will be immediatly
         fired !
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868436836223205131, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
+      propertyPath: m_text
+      value: Welcome to your first day at office ! Let me remember you some basic
+        rules ...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}

@@ -285,6 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8868436836081364465}
   - component: {fileID: 8868436836081364466}
+  - component: {fileID: 6273834610640576403}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -325,7 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51d8fe51451cb4448a05b37f2d6359e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HiddenByDefault: 0
   HideOnCompletion: 1
   Status: 0
   DisabledDiode: {fileID: 0}
@@ -343,6 +343,26 @@ MonoBehaviour:
     to complete your instructions.
   - Be aware that if you don't for any reasons, you will be immediatly fired !
   - Have a good day worker.
+--- !u!95 &6273834610640576403
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8868436836081364464}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8868436836223205129
 GameObject:
   m_ObjectHideFlags: 0
