@@ -10,7 +10,7 @@ public class ActionSequence : IList<LevelAction>
 
 	public int CurrentAction;
 
-	public bool Validated => CurrentAction == Count;
+	public bool Validated => CurrentAction >= Count;
 
 	public void Initialize()
 	{
@@ -22,6 +22,7 @@ public class ActionSequence : IList<LevelAction>
 		CurrentAction = -1;
 		GoToNextAction();
 	}
+
 	public void GoToNextAction()
 	{
 		CurrentAction++;

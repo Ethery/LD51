@@ -67,6 +67,10 @@ public abstract class LevelAction : MonoBehaviour
 
 			OnActionFinished();
 		}
+		else if (Status == EActionStatus.Finished)
+        {
+			OnActionFinished();
+        }
 	}
 
 	protected abstract void FinishActionSpecific();

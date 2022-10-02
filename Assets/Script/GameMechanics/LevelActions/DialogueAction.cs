@@ -36,8 +36,12 @@ public class DialogueAction : LevelAction
 
     protected override void StartActionSpecific()
     {
-        nextButton.onClick.AddListener( goNext);
         Time.timeScale = 0f;
         goNext();
+    }
+
+    private void Awake()
+    {
+        nextButton.onClick.AddListener(goNext);
     }
 }

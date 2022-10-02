@@ -176,6 +176,7 @@ MonoBehaviour:
   HideOnCompletion: 0
   Status: 0
   button: {fileID: 4536398784920409239}
+  numberToFinish: 1
 --- !u!1 &4536398784920409321
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,16 +297,4 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4536398784920409238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4536398783366942937}
-        m_TargetAssemblyTypeName: LevelAction, Assembly-CSharp
-        m_MethodName: FinishAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
