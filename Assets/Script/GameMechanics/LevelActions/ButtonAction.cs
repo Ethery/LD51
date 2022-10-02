@@ -19,4 +19,10 @@ public class ButtonAction : LevelAction
 		button.interactable = true;
 	}
 
+    private void Awake()
+    {
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(FinishAction);
+    }
+
 }
