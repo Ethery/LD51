@@ -24,11 +24,12 @@ public class ActionSequence : IList<LevelAction>
 	}
 	public void GoToNextAction()
 	{
-		if (CurrentAction >= 0)
-			this[CurrentAction].ResetAction();
 		CurrentAction++;
 		if (CurrentAction < Count)
+		{
+			this[CurrentAction].ResetAction();
 			this[CurrentAction].StartAction();
+		}
 	}
 
 	#region IList Implementation

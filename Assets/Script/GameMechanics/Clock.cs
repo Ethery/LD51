@@ -40,6 +40,7 @@ public class Clock : MonoBehaviour
 	public void Reset()
 	{
 		CurrentTime = 0;
+		IsOK = false;
 		Animator.SetTrigger("Reset");
 	}
 }

@@ -12,11 +12,36 @@ public abstract class LevelAction : MonoBehaviour
 
 	public EActionStatus Status;
 
+	public Diode DisabledDiode;
+	public Diode StartedDiode;
+	public Diode FinishedDiode;
+
 	public enum EActionStatus
 	{
 		Disabled,
 		Started,
 		Finished
+	}
+
+	private void Update()
+	{
+		if (DisabledDiode != null)
+		{
+			DisabledDiode.On = Status == EActionStatus.Disabled;
+			DisabledDiode.color = Color.red;
+		}
+
+		if (StartedDiode != null)
+		{
+			StartedDiode.On = Status == EActionStatus.Started;
+			StartedDiode.color = (Color.red + Color.yellow) / 2;
+		}
+
+		if (FinishedDiode != null)
+		{
+			FinishedDiode.On = Status == EActionStatus.Finished;
+			FinishedDiode.color = Color.green;
+		}
 	}
 
 	public void StartAction()
