@@ -31,7 +31,6 @@ public class GameManager : MonoBehaviour
 
 		WinScreen.SetActive(false);
 		LoseScreen.SetActive(false);
-		ClickSource = GetComponent<AudioSource>();
 
 	}
 

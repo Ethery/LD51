@@ -7,7 +7,6 @@ public class InGamePauseScreen : MonoBehaviour
 {
 	public GameObject PauseScreen;
 
-
 	public void ToggleScreen()
 	{
 		GameManager.Instance.ClickSource.Play();

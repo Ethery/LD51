@@ -29,7 +29,10 @@ public class SliderAction : LevelAction
 		if (Slider.interactable)
 		{
 			if (Slider.value >= 0.95f)
+			{
+				Slider.value = 1;
 				FinishAction();
+			}
 		}
 		sliderName.text = name;
 	}
