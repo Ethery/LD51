@@ -5,7 +5,6 @@ using UnityEngine;
 [Serializable]
 public abstract class LevelAction : MonoBehaviour
 {
-	public bool HiddenByDefault;
 	public bool HideOnCompletion;
 
 	public Action OnActionFinished;
@@ -68,9 +67,9 @@ public abstract class LevelAction : MonoBehaviour
 			OnActionFinished();
 		}
 		else if (Status == EActionStatus.Finished)
-        {
+		{
 			OnActionFinished();
-        }
+		}
 	}
 
 	protected abstract void FinishActionSpecific();
@@ -80,7 +79,7 @@ public abstract class LevelAction : MonoBehaviour
 		if (Status == EActionStatus.Finished)
 		{
 			Status = EActionStatus.Disabled;
-			gameObject.SetActive(!HiddenByDefault && !HideOnCompletion);
+			gameObject.SetActive(!HideOnCompletion);
 			ResetActionSpecific();
 		}
 	}

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,17 +11,15 @@ public class ButtonAction : LevelAction
 	public List<int> PushObjectives = new List<int>() { 1 };
 	public int PushObjective => PushObjectives[CurrentObjective];
 	public int CurrentObjective = -1;
-	private void Awake()
+	public TextMeshProUGUI buttonName;
+
+	public void PushedButtonOnce()
 	{
-		button = GetComponent<Button>();
-		button.onClick.RemoveAllListeners();
-		button.onClick.AddListener(() =>
-		{
-			PushCount++;
-			if (PushCount >= PushObjective)
-				FinishAction();
-		});
+		PushCount++;
+		if (PushCount >= PushObjective)
+			FinishAction();
 	}
+
 	protected override void FinishActionSpecific()
 	{
 		button.interactable = false;
@@ -32,12 +31,25 @@ public class ButtonAction : LevelAction
 	protected override void StartActionSpecific()
 	{
 		button.interactable = true;
+		button = GetComponentInChildren<Button>();
+		button.onClick.RemoveAllListeners();
+		button.onClick.AddListener(PushedButtonOnce);
 		PushCount = 0;
 		if (PushObjectives.Count > CurrentObjective + 1)
 			CurrentObjective++;
 	}
+
+	private void Awake()
+	{
+
+		buttonName = GetComponentInChildren<TextMeshProUGUI>();
+		buttonName.text = name;
+	}
 	public override string ToString()
 	{
-		return $"Push the button {PushObjective} times";
+		if (CurrentObjective != -1)
+			return $"Push the button {name} {PushObjective} times";
+		else
+			return string.Empty;
 	}
 }

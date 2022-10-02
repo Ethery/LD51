@@ -1,15 +1,18 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SliderAction : LevelAction
 {
 	public Slider Slider;
+	public TextMeshProUGUI sliderName;
+
+
 
 	protected override void StartActionSpecific()
 	{
 		Slider.interactable = true;
-		Slider.value = 0;
 	}
 	protected override void FinishActionSpecific()
 	{
@@ -18,6 +21,7 @@ public class SliderAction : LevelAction
 	protected override void ResetActionSpecific()
 	{
 		Slider.interactable = false;
+		Slider.value = 0;
 	}
 
 	private void Update()
@@ -27,6 +31,12 @@ public class SliderAction : LevelAction
 			if (Slider.value >= 1)
 				FinishAction();
 		}
+		sliderName.text = name;
 	}
 
+
+	public override string ToString()
+	{
+		return $"Max out the slider " + name;
+	}
 }

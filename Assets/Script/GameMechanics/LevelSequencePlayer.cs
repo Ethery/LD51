@@ -7,7 +7,16 @@ public class LevelSequencePlayer : MonoBehaviour
 	public List<ActionSequence> ActionSequences;
 	public int CurrentHour = 0;
 
-	public ActionSequence CurrentSequence => ActionSequences[CurrentHour];
+	public ActionSequence CurrentSequence
+	{
+		get
+		{
+			if (ActionSequences.Count > CurrentHour)
+				return ActionSequences[CurrentHour];
+			else
+				return null;
+		}
+	}
 	public Clock clock => GameManager.Instance.clock;
 
 

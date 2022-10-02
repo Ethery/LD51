@@ -17,11 +17,12 @@ public class DialogueAction : LevelAction
         if (num >= textToTalk.Count)
         {
             FinishAction();
+            GameManager.Instance.clock.CurrentTime = 9.5f;
             return;
         }
         patronTalk.text = textToTalk[num];
 
-        
+
     }
 
     protected override void FinishActionSpecific()
@@ -31,7 +32,7 @@ public class DialogueAction : LevelAction
 
     protected override void ResetActionSpecific()
     {
-        
+
     }
 
     protected override void StartActionSpecific()

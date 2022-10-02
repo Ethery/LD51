@@ -40,5 +40,6 @@ public class InGamePauseScreen : MonoBehaviour
 	public void ReloadScene()
 	{
 		GameManager.Instance.Reload();
+		ToggleScreen();
 	}
 }

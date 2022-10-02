@@ -407,6 +407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoseScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 8302365349004755037, guid: c094ae2a1e6235f4298d3e45833a0233, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c094ae2a1e6235f4298d3e45833a0233, type: 3}
 --- !u!224 &3123045474646790682 stripped
@@ -430,6 +434,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 7977968611308951904}
+    - target: {fileID: 4278766175235591567, guid: 0665463ad42d6f94a82aafac23aeb3f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7977968611308951904}
+    - target: {fileID: 4278766175235591567, guid: 0665463ad42d6f94a82aafac23aeb3f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 4278766175235591567, guid: 0665463ad42d6f94a82aafac23aeb3f0, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7875334543066382474, guid: 0665463ad42d6f94a82aafac23aeb3f0, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -518,6 +534,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WinScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 7875334543066382479, guid: 0665463ad42d6f94a82aafac23aeb3f0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0665463ad42d6f94a82aafac23aeb3f0, type: 3}
 --- !u!224 &890312760194579395 stripped
@@ -537,10 +557,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7977968611308951905}
     m_Modifications:
-    - target: {fileID: 8579151988607567544, guid: 8b6d70b2a5e4792489653bc5c504fa2d, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7743fd4d22f871a43a870ff03a3fe438, type: 3}
     - target: {fileID: 8579151988970822306, guid: 8b6d70b2a5e4792489653bc5c504fa2d, type: 3}
       propertyPath: m_Pivot.x
       value: 0

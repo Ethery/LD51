@@ -16,6 +16,9 @@ public class TaskList : MonoBehaviour
 			int i = 0;
 			foreach (LevelAction action in currentPlayer.CurrentSequence)
 			{
+				if (action is DialogueAction)
+					continue;
+
 				GameObject gameObject = null;
 				if (TaskContainer.childCount <= i)
 				{
@@ -23,7 +26,7 @@ public class TaskList : MonoBehaviour
 				}
 				else
 				{
-					gameObject = TaskContainer.GetChild(0).gameObject;
+					gameObject = TaskContainer.GetChild(i).gameObject;
 				}
 
 				gameObject.GetComponent<TextMeshProUGUI>().text = action.ToString();

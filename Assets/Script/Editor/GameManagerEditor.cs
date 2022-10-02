@@ -31,6 +31,21 @@ public class ToolsWindow : EditorWindow
 				GameManager.Instance.WinLevel();
 			}
 			EditorGUILayout.EndHorizontal();
+			EditorGUILayout.BeginHorizontal();
+			if (GUILayout.Button("Slow"))
+			{
+				Time.timeScale = 0.25f;
+			}
+			if (GUILayout.Button("Normal"))
+			{
+				Time.timeScale = 1f;
+			}
+			if (GUILayout.Button("Fast"))
+			{
+				Time.timeScale = 2f;
+			}
+
+			EditorGUILayout.EndHorizontal();
 		}
 
 	}

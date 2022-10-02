@@ -14,6 +14,7 @@ public class KeyboardAction : LevelAction
     public TextMeshProUGUI CodeText;
 
     public int CodeAsked = -1;
+    public string CodeTextAsked = $"Enter the date on the pad";
     public static int DigitsIn(int code) { return (int)Mathf.Log10(code) + 1; }
 
     private void Awake()
@@ -68,6 +69,11 @@ public class KeyboardAction : LevelAction
     {
         CodeWritten = -1;
         CodeText.text = string.Empty;
+    }
+
+    public override string ToString()
+    {
+        return CodeTextAsked;
     }
 
 }

@@ -33,11 +33,11 @@ RectTransform:
   m_Father: {fileID: 8868436836959019076}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 119.1982, y: -3.9893951}
-  m_SizeDelta: {x: 540.6903, y: 304.1368}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 540.6903, y: 0}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!222 &5764292213632351561
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -112,10 +112,10 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.5242, y: 9}
-  m_SizeDelta: {x: 173.4375, y: 97.7237}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 368.7419, y: -40}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5633146667742069965
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 3.2
 --- !u!1 &8868436835633954227
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,8 +190,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -64.1767, y: 65.63525}
-  m_SizeDelta: {x: -122.5192, y: -131.2705}
+  m_AnchoredPosition: {x: -15.537689, y: 10.923698}
+  m_SizeDelta: {x: -25.2414, y: -28.5802}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &8868436835633954239
 CanvasRenderer:
@@ -308,11 +308,11 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 201, y: 117.961914}
-  m_SizeDelta: {x: 402, y: 208.0762}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 552.0873, y: 299.1564}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &8868436836081364466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,10 +335,14 @@ MonoBehaviour:
   nextButton: {fileID: 8868436835633954237}
   textToTalk:
   - Hello worker ...
-  - Welcome to your first day at office ! \n Let me remember you some basic rules
+  - Welcome to your first day at the office ! \n Let me remember you some basic rules
     ...
-  - Your Job is to follow the instruction on the screen. \n And when i say that,
-    i mean ONLY the instructions on the screen.
+  - Your Job is to follow the instruction on the screen. And when i say that, i mean
+    ONLY the instructions on the screen.
+  - The clock is here to remember you to be productive ! You always have 10 seconds
+    to complete your instructions.
+  - Be aware that if you don't for any reasons, you will be immediatly fired !
+  - Have a good day worker.
 --- !u!1 &8868436836223205129
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,8 +378,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10.210007, y: -7.2927856}
-  m_SizeDelta: {x: -177.9444, y: -186.6958}
+  m_AnchoredPosition: {x: -0.8338165, y: -3.717804}
+  m_SizeDelta: {x: -52.061, y: -67.4107}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8868436836223205140
 CanvasRenderer:
@@ -408,8 +412,8 @@ MonoBehaviour:
   m_text: Welcome to your first day at office ! \n Let me remember you some basic
     rules ...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 6071a6931177d40409128e331c818c6c, type: 2}
-  m_sharedMaterial: {fileID: -205454923629149223, guid: 6071a6931177d40409128e331c818c6c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e15c0842d66a644ba7593c108908906, type: 2}
+  m_sharedMaterial: {fileID: 5309267068016252732, guid: 5e15c0842d66a644ba7593c108908906, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -433,8 +437,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 26
+  m_fontSizeBase: 26
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -508,8 +512,8 @@ RectTransform:
   m_Father: {fileID: 8868436836081364465}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -118.87276, y: -4.100006}
-  m_SizeDelta: {x: 256.3346, y: 257.17}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 1, y: 1}
