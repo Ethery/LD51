@@ -10,8 +10,11 @@ public abstract class LevelAction : MonoBehaviour
 
 	public Action OnActionFinished;
 
-	[HideInInspector]
 	public EActionStatus Status;
+
+	public Diode DisabledDiode;
+	public Diode StartedDiode;
+	public Diode FinishedDiode;
 
 	public enum EActionStatus
 	{
@@ -20,10 +23,35 @@ public abstract class LevelAction : MonoBehaviour
 		Finished
 	}
 
+	private void Update()
+	{
+		if (DisabledDiode != null)
+		{
+			DisabledDiode.On = Status == EActionStatus.Disabled;
+			DisabledDiode.color = Color.red;
+		}
+
+		if (StartedDiode != null)
+		{
+			StartedDiode.On = Status == EActionStatus.Started;
+			StartedDiode.color = (Color.red + Color.yellow) / 2;
+		}
+
+		if (FinishedDiode != null)
+		{
+			FinishedDiode.On = Status == EActionStatus.Finished;
+			FinishedDiode.color = Color.green;
+		}
+	}
+
 	public void StartAction()
 	{
-		StartActionSpecific();
-		Status = EActionStatus.Started;
+		if (Status == EActionStatus.Disabled)
+		{
+			Status = EActionStatus.Started;
+			gameObject.SetActive(true);
+			StartActionSpecific();
+		}
 	}
 	protected abstract void StartActionSpecific();
 
@@ -31,13 +59,13 @@ public abstract class LevelAction : MonoBehaviour
 	{
 		if (Status == EActionStatus.Started)
 		{
+			Status = EActionStatus.Finished;
 			if (HideOnCompletion)
 				gameObject.SetActive(false);
 
 			FinishActionSpecific();
 
 			OnActionFinished();
-			Status = EActionStatus.Finished;
 		}
 		else if (Status == EActionStatus.Finished)
         {
@@ -49,9 +77,12 @@ public abstract class LevelAction : MonoBehaviour
 
 	public void ResetAction()
 	{
-		gameObject.SetActive(!HiddenByDefault);
-		ResetActionSpecific();
-		Status = EActionStatus.Disabled;
+		if (Status == EActionStatus.Finished)
+		{
+			Status = EActionStatus.Disabled;
+			gameObject.SetActive(!HiddenByDefault && !HideOnCompletion);
+			ResetActionSpecific();
+		}
 	}
 	protected abstract void ResetActionSpecific();
 

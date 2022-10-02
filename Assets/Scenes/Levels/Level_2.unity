@@ -357,11 +357,6 @@ MonoBehaviour:
     - {fileID: 4536398783366942936}
     - {fileID: 8593035139840041261}
     - {fileID: 4536398783366942936}
-  - CurrentAction: 0
-    Actions:
-    - {fileID: 4536398783366942936}
-    - {fileID: 8593035139840041261}
-    - {fileID: 4536398783366942936}
   CurrentHour: 0
   lastTimeValidated: -1
 --- !u!224 &2741397283551310936 stripped
@@ -646,11 +641,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8593035139950019629, guid: 10a50fd3baec389489feade43ed20a26, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.0000095367
+      value: 0.0000076293945
       objectReference: {fileID: 0}
     - target: {fileID: 8593035139950019629, guid: 10a50fd3baec389489feade43ed20a26, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0000019073
+      value: 0.0000019073486
       objectReference: {fileID: 0}
     - target: {fileID: 8593035139950019630, guid: 10a50fd3baec389489feade43ed20a26, type: 3}
       propertyPath: m_Sprite
