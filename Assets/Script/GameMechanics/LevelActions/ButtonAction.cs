@@ -40,11 +40,4 @@ public class ButtonAction : LevelAction
 	{
 		return $"Push the button {PushObjective} times";
 	}
-
-    private void Awake()
-    {
-        button.onClick.RemoveAllListeners();
-        button.onClick.AddListener(FinishAction);
-    }
-
 }
