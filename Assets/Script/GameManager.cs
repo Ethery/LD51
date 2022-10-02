@@ -42,13 +42,13 @@ public class GameManager : MonoBehaviour
 
 	public IEnumerator StartFirstLevel()
 	{
-		clock.Reset();
+		clock.ResetClock();
 		TransitionText.text = "Day " + (currentLevel);
 		TransitionScreen.SetActive(true);
 		SceneManager.LoadScene("Level_" + currentLevel, LoadSceneMode.Additive);
 		yield return new WaitForSecondsRealtime(TransiWaitTime);
 		TransitionScreen.SetActive(false);
-		clock.Reset();
+		clock.ResetClock();
 		yield return null;
 	}
 
@@ -66,14 +66,14 @@ public class GameManager : MonoBehaviour
 
 	public IEnumerator GoToNextLevel()
 	{
-		clock.Reset();
+		clock.ResetClock();
 		TransitionText.text = "Day " + (currentLevel + 1);
 		TransitionScreen.SetActive(true);
 		SceneManager.UnloadSceneAsync("Level_" + (currentLevel++));
 		SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
 		yield return new WaitForSecondsRealtime(TransiWaitTime);
 		TransitionScreen.SetActive(false);
-		clock.Reset();
+		clock.ResetClock();
 		yield return null;
 	}
 
@@ -83,14 +83,14 @@ public class GameManager : MonoBehaviour
 
 		SceneManager.UnloadSceneAsync("Level_" + (currentLevel));
 		SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
-		clock.Reset();
+		clock.ResetClock();
 	}
 	public void GoToLevel(int aLevelToGo)
 	{
 		SceneManager.UnloadSceneAsync("Level_" + (currentLevel));
 		currentLevel = aLevelToGo;
 		SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
-		clock.Reset();
+		clock.ResetClock();
 	}
 	public void BackToMainMenu()
 	{

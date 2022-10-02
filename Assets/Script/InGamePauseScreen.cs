@@ -7,10 +7,6 @@ public class InGamePauseScreen : MonoBehaviour
 {
 	public GameObject PauseScreen;
 
-	public void Start()
-	{
-		HideScreen();
-	}
 
 	public void ToggleScreen()
 	{

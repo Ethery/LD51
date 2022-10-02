@@ -8,15 +8,11 @@ public class Clock : MonoBehaviour
 	[ReadOnly(true)]
 	public float CurrentTime;
 
-	private Animator Animator;
+	private Animator Animator => GetComponent<Animator>();
 
 	[ReadOnly(true)]
 	public bool IsOK;
 
-	private void Start()
-	{
-		Animator = GetComponent<Animator>();
-	}
 
 	public void FixedUpdate()
 	{
@@ -26,7 +22,7 @@ public class Clock : MonoBehaviour
 			if (IsOK)
 			{
 				IsOK = false;
-				Reset();
+				ResetClock();
 			}
 			else
 			{
@@ -37,7 +33,7 @@ public class Clock : MonoBehaviour
 	}
 
 	[ContextMenu("Reset Clock")]
-	public void Reset()
+	public void ResetClock()
 	{
 		CurrentTime = 0;
 		IsOK = false;
