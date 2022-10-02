@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 889bb7cc9d273b74d81f2335cc57183d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Goldman
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 42911b6f7f57eda4695e63a992a5b18c, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
