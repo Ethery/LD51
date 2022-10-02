@@ -7,13 +7,13 @@ public class LevelSequencePlayer : MonoBehaviour
 	public List<ActionSequence> ActionSequences;
 	public int CurrentHour = 0;
 
-	public ActionSequence LevelSequence => ActionSequences[CurrentHour];
+	public ActionSequence CurrentSequence => ActionSequences[CurrentHour];
 	public Clock clock => GameManager.Instance.clock;
 
 
 	private void Start()
 	{
-		LevelSequence.Initialize();
+		CurrentSequence.Initialize();
 	}
 
 
@@ -24,11 +24,11 @@ public class LevelSequencePlayer : MonoBehaviour
 		if (lastTimeValidated > clock.CurrentTime)
 		{
 			lastTimeValidated = -1;
-			LevelSequence.Initialize();
+			CurrentSequence.Initialize();
 		}
 		if (!clock.IsOK)
 		{
-			if (LevelSequence.Validated)
+			if (CurrentSequence.Validated)
 			{
 				clock.IsOK = true;
 				CurrentHour++;
