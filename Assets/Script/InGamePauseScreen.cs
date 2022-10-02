@@ -14,7 +14,7 @@ public class InGamePauseScreen : MonoBehaviour
 
 	public void ToggleScreen()
 	{
-		GameManager.Instance.source.Play();
+		GameManager.Instance.ClickSource.Play();
 		if (PauseScreen.activeSelf)
 			HideScreen();
 		else
@@ -23,27 +23,27 @@ public class InGamePauseScreen : MonoBehaviour
 
 	private void ShowScreen()
 	{
-		GameManager.Instance.source.Play();
+		GameManager.Instance.ClickSource.Play();
 		Time.timeScale = 0;
 		PauseScreen.SetActive(true);
 	}
 
 	private void HideScreen()
 	{
-		GameManager.Instance.source.Play();
+		GameManager.Instance.ClickSource.Play();
 		Time.timeScale = 1;
 		PauseScreen.SetActive(false);
 	}
 
 	public void ExitToMainMenu()
 	{
-		GameManager.Instance.source.Play();
+		GameManager.Instance.ClickSource.Play();
 		GameManager.Instance.BackToMainMenu();
 	}
 
 	public void ReloadScene()
 	{
-		GameManager.Instance.source.Play();
+		GameManager.Instance.ClickSource.Play();
 		GameManager.Instance.Reload();
 		ToggleScreen();
 	}

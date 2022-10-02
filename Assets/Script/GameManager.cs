@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance;
 
 	public Clock clock;
-	public AudioSource source;
+	public AudioSource ClickSource;
+	public AudioSource DingSource;
 
 	public const float TransiWaitTime = 1.5f;
 
@@ -30,7 +31,7 @@ public class GameManager : MonoBehaviour
 
 		WinScreen.SetActive(false);
 		LoseScreen.SetActive(false);
-		source = GetComponent<AudioSource>();
+		ClickSource = GetComponent<AudioSource>();
 
 	}
 
@@ -78,7 +79,7 @@ public class GameManager : MonoBehaviour
 
 	public void Reload()
 	{
-		source.Play();
+		ClickSource.Play();
 
 		SceneManager.UnloadSceneAsync("Level_" + (currentLevel));
 		SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
@@ -93,7 +94,7 @@ public class GameManager : MonoBehaviour
 	}
 	public void BackToMainMenu()
 	{
-		source.Play();
+		ClickSource.Play();
 		SceneManager.LoadScene("MainMenu");
 	}
 

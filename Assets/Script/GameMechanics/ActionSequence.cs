@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
@@ -30,6 +31,11 @@ public class ActionSequence : IList<LevelAction>
 		{
 			this[CurrentAction].ResetAction();
 			this[CurrentAction].StartAction();
+		}
+		else
+		{
+			if (this[Count - 1].GetType() != typeof(DialogueAction))
+				GameManager.Instance.DingSource.Play();
 		}
 	}
 
