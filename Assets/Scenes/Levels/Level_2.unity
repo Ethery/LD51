@@ -513,11 +513,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6249601849478615101, guid: 5557f14dd2f93464aa93128553c30d0e, type: 3}
       propertyPath: CodeAsked
-      value: 69423580
+      value: 98764
       objectReference: {fileID: 0}
     - target: {fileID: 6249601849478615101, guid: 5557f14dd2f93464aa93128553c30d0e, type: 3}
       propertyPath: CodeTextAsked
-      value: Enter the code 69423580
+      value: Enter the code 98764
       objectReference: {fileID: 0}
     - target: {fileID: 6249601849478615102, guid: 5557f14dd2f93464aa93128553c30d0e, type: 3}
       propertyPath: m_Name
@@ -936,8 +936,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
       propertyPath: textToTalk.Array.data[1]
-      value: Do you see these new sliders on your desk ? You will have to use it
-        !
+      value: ' Do you see that new slider on your desk ? You will have to use them
+        !'
       objectReference: {fileID: 0}
     - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
       propertyPath: textToTalk.Array.data[2]

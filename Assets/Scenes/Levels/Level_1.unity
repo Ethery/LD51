@@ -462,6 +462,11 @@ PrefabInstance:
         rules ...
       objectReference: {fileID: 0}
     - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
+      propertyPath: textToTalk.Array.data[2]
+      value: Your job is to follow the instruction on the screen. And when i say
+        that, I mean ONLY the instructions on the screen.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
       propertyPath: textToTalk.Array.data[4]
       value: Be aware that if you don't, for any reasons, you will be immediatly
         fired !
