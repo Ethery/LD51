@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour
 	{
 		clock.ResetClock();
 		TransitionText.text = "Day " + (currentLevel + 1);
+		yield return new WaitForSecondsRealtime(2f);
 		TransitionScreen.SetActive(true);
 		SceneManager.UnloadSceneAsync("Level_" + (currentLevel++));
 		SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);

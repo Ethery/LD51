@@ -31,7 +31,10 @@ public class TaskList : MonoBehaviour
 
 				gameObject.GetComponent<TextMeshProUGUI>().text = action.ToString();
 				gameObject.SetActive(true);
-
+				if (i < currentPlayer.CurrentSequence.CurrentAction)
+					gameObject.GetComponent<TextMeshProUGUI>().color = Color.green;
+				else
+					gameObject.GetComponent<TextMeshProUGUI>().color = Color.white;
 				i++;
 			}
 			for (; i < TaskContainer.childCount; i++)
