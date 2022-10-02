@@ -794,20 +794,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
       propertyPath: textToTalk.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
-      propertyPath: textToTalk.Array.data[1]
+      propertyPath: textToTalk.Array.data[0]
       value: ' I wanted to tell you something important...'
       objectReference: {fileID: 0}
     - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
-      propertyPath: textToTalk.Array.data[2]
+      propertyPath: textToTalk.Array.data[1]
       value: ' Now, you will have an extra task ! You are going to enter a code on
         that keyboard.'
       objectReference: {fileID: 0}
     - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
-      propertyPath: textToTalk.Array.data[3]
+      propertyPath: textToTalk.Array.data[2]
       value: ' Remember, it''s very important !'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
+      propertyPath: textToTalk.Array.data[3]
+      value: ' Don''t disappoint me !'
       objectReference: {fileID: 0}
     - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
       propertyPath: textToTalk.Array.data[4]
@@ -932,8 +936,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
       propertyPath: textToTalk.Array.data[1]
-      value: ' Do you see that new slider on your desk ? You will have to use it
-        !'
+      value: Do you see these new sliders on your desk ? You will have to use it
+        !
       objectReference: {fileID: 0}
     - target: {fileID: 8868436836081364466, guid: d8c9143760920d84d8ceefab27c8b7a4, type: 3}
       propertyPath: textToTalk.Array.data[2]

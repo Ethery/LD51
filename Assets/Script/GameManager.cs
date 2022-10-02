@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using Unity.Collections;
-using UnityEditor;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,6 +10,8 @@ public class GameManager : MonoBehaviour
 
 	public GameObject WinScreen;
 	public GameObject LoseScreen;
+	public GameObject TransitionScreen;
+	public TextMeshProUGUI TransitionText;
 
 	public static GameManager Instance;
 
@@ -39,14 +38,25 @@ public class GameManager : MonoBehaviour
 	{
 		if (lastLevel != currentLevel)
 		{
-			SceneManager.UnloadSceneAsync("Level_" + (currentLevel++));
-			SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
-			clock.Reset();
+			StartCoroutine(SwitchLevel());
 		}
 		else
 		{
 			WinScreen.SetActive(true);
 		}
+	}
+
+	public IEnumerator SwitchLevel()
+	{
+		clock.Reset();
+		TransitionText.text = "Day " + (currentLevel + 1);
+		TransitionScreen.SetActive(true);
+		SceneManager.UnloadSceneAsync("Level_" + (currentLevel++));
+		SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
+		yield return new WaitForSecondsRealtime(3);
+		TransitionScreen.SetActive(false);
+		clock.Reset();
+		yield return null;
 	}
 
 	public void Reload()
