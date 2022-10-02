@@ -571,11 +571,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6249601849478615101, guid: 5557f14dd2f93464aa93128553c30d0e, type: 3}
       propertyPath: CodeAsked
-      value: 9371672
+      value: 81603
       objectReference: {fileID: 0}
     - target: {fileID: 6249601849478615101, guid: 5557f14dd2f93464aa93128553c30d0e, type: 3}
       propertyPath: CodeTextAsked
-      value: Enter the code 09371672
+      value: Enter the code 81603
       objectReference: {fileID: 0}
     - target: {fileID: 6249601849478615102, guid: 5557f14dd2f93464aa93128553c30d0e, type: 3}
       propertyPath: m_Name
@@ -1060,7 +1060,6 @@ MonoBehaviour:
     - {fileID: 549263472}
     - {fileID: 2089616476}
     - {fileID: 1601916994}
-    - {fileID: 1657258941}
     - {fileID: 1657258939}
     - {fileID: 1657258940}
     - {fileID: 1657258942}
@@ -1072,7 +1071,6 @@ MonoBehaviour:
     - {fileID: 1657258939}
     - {fileID: 1657258941}
     - {fileID: 1657258940}
-    - {fileID: 1657258942}
     - {fileID: 549263472}
     - {fileID: 1601916994}
     - {fileID: 2089616476}
