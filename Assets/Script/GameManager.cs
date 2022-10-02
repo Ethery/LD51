@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-	public int currentLevel = 1;
+	public int currentLevel = 0;
 	public int lastLevel = 3;
 
 	public GameObject WinScreen;
@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
 	public static GameManager Instance;
 
 	public Clock clock;
+	public AudioSource source;
+
+	public const float TransiWaitTime = 1.5f;
+
 
 	private void Awake()
 	{
@@ -26,19 +30,32 @@ public class GameManager : MonoBehaviour
 
 		WinScreen.SetActive(false);
 		LoseScreen.SetActive(false);
+		source = GetComponent<AudioSource>();
 
 	}
 
 	private void Start()
 	{
+		StartCoroutine(StartFirstLevel());
+	}
+
+	public IEnumerator StartFirstLevel()
+	{
+		clock.Reset();
+		TransitionText.text = "Day " + (currentLevel);
+		TransitionScreen.SetActive(true);
 		SceneManager.LoadScene("Level_" + currentLevel, LoadSceneMode.Additive);
+		yield return new WaitForSecondsRealtime(TransiWaitTime);
+		TransitionScreen.SetActive(false);
+		clock.Reset();
+		yield return null;
 	}
 
 	public void WinLevel()
 	{
 		if (lastLevel != currentLevel)
 		{
-			StartCoroutine(SwitchLevel());
+			StartCoroutine(GoToNextLevel());
 		}
 		else
 		{
@@ -46,14 +63,14 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
-	public IEnumerator SwitchLevel()
+	public IEnumerator GoToNextLevel()
 	{
 		clock.Reset();
 		TransitionText.text = "Day " + (currentLevel + 1);
 		TransitionScreen.SetActive(true);
 		SceneManager.UnloadSceneAsync("Level_" + (currentLevel++));
 		SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
-		yield return new WaitForSecondsRealtime(3);
+		yield return new WaitForSecondsRealtime(TransiWaitTime);
 		TransitionScreen.SetActive(false);
 		clock.Reset();
 		yield return null;
@@ -61,6 +78,8 @@ public class GameManager : MonoBehaviour
 
 	public void Reload()
 	{
+		source.Play();
+
 		SceneManager.UnloadSceneAsync("Level_" + (currentLevel));
 		SceneManager.LoadScene("Level_" + (currentLevel), LoadSceneMode.Additive);
 		clock.Reset();
@@ -74,6 +93,7 @@ public class GameManager : MonoBehaviour
 	}
 	public void BackToMainMenu()
 	{
+		source.Play();
 		SceneManager.LoadScene("MainMenu");
 	}
 
